@@ -26,7 +26,7 @@
                     <label for="password">Password</label>
                   </div>
                   <span>
-                    Not registered? <a href="{{ route('register') }}" class="text-danger">registered</a>
+                    Not registered? <a href="{{ route('register') }}" class="text-danger">register</a>
                   </span>
                   @if (Route::has('password.request'))
                   <a class="btn btn-link text-decoration-none d-flex justify-content-center text-danger" href="{{ route('password.request') }}">
