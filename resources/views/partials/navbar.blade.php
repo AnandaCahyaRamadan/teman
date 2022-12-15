@@ -1,6 +1,6 @@
   <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
     <a class="navbar-brand p-0">
-        <h1 class="m-0 "><span><img src="/img/disnaker.png" alt="" width="9%"></span> Teman Semarang</h1>
+        <h1 class="m-0 "><span><img src="/img/disnaker.png" alt="" width="11%"></span> Teman Semarang</h1>
     </a>
     <button class="navbar-toggler m-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="fa fa-bars"></span>
