@@ -2,7 +2,7 @@
     <a class="navbar-brand p-0">
         <h1 class="m-0 "><span><img src="/img/disnaker.png" alt="" width="9%"></span> Teman Semarang</h1>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+    <button class="navbar-toggler m-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="fa fa-bars"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
