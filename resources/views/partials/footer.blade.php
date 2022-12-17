@@ -5,9 +5,15 @@
           <div class="col-lg-4 col-md-6 footer-about">
               <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-danger p-4">
                   <a class="navbar-brand">
-                      <h2 class="m-0 text-white">Teman Semarang</h2>
+                      <h1 class="m-0 h5 text-white"><span><img src="/img/disnaker.png" alt="" width="11%"> Teman Kota Semarang</h1>
                   </a>
-                  <p class="mt-3 mb-4">Teman Semarang merupakan aplikasi kolaborasi antara mahasiswa program Studi Independen Bersertifikat dari Social Ecomonic Accelerator Lab (SEAL) dengan pemerintah kota semarang guna meningkatkan perekonomian kota semarang.</p>
+                  <p class="mt-3 mb-4">Teman merupakan sistem informasi
+                    kolaborasi antara mahasiswa program 
+                    Studi Independen Bersertifikat dari 
+                    Social Ecomonic Accelerator Lab 
+                    (SEAL) dengan Pemerintah Kota 
+                    Semarang guna meningkatkan 
+                    perekonomian Kota Semarang.</p>
               </div>
           </div>
           <div class="col-lg-8 col-md-6">
