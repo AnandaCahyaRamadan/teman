@@ -10,13 +10,13 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="exampleInputKet">Pesan</label>
-                        <textarea rows="3" type="text" class="form-control @error('pesan') is-invalid @enderror" id="exampleInputKet" placeholder="pesan" name="pesan" value="{{$konsultasis->pesan ?? old('pesan')}}"></textarea>
+                        <textarea rows="3" type="text" class="form-control @error('pesan') is-invalid @enderror" id="exampleInputKet" placeholder="pesan" name="pesan">{{ old('pesan', $konsultasis->pesan) }}</textarea>
                         @error('pesan') <span class="text-danger">{{$message}}</span> @enderror
                     </div>
                     
                     <div class="form-group">
                         <label for="exampleInputbal">Balasan</label>
-                        <textarea rows="3" type="text" class="form-control @error('balasan') is-invalid @enderror" id="exampleInputName" placeholder="balasan" name="balasan" value="{{$konsultasis->balasan ?? old('balasan')}}"></textarea>
+                        <textarea rows="3" type="text" class="form-control @error('balasan') is-invalid @enderror" id="exampleInputName" placeholder="balasan" name="balasan">{{ old('pesan', $konsultasis->balasan) }}</textarea>
                         @error('balasan') <span class="text-danger">{{$message}}</span> @enderror
                     </div>
                 </div>
