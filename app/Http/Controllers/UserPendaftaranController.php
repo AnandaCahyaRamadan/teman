@@ -21,7 +21,7 @@ class UserPendaftaranController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'telepon' =>  'required',
+            'telepon' =>  'required|numeric',
             'status' =>  'nullable',
             'penjadwalan' =>  'nullable',
             'file' => 'required|file|mimes:doc,docx,pdf',

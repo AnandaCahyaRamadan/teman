@@ -14,6 +14,7 @@
                     (SEAL) dengan Pemerintah Kota 
                     Semarang guna meningkatkan 
                     perekonomian Kota Semarang.</p>
+                  
               </div>
           </div>
           <div class="col-lg-8 col-md-6">
