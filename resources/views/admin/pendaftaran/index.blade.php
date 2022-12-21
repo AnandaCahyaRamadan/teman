@@ -26,7 +26,7 @@
                         <form class="form" method="get" action="{{ route('pendaftaran/search') }}">
                             <div class="form-group w-100 mb-3">
                                 <label for="search" class="d-block mr-2 mb-1">Cari</label>
-                                    <input type="text" name="search" class="form-control w-75 d-inline" id="search" placeholder="Masukkan telepon">
+                                    <input type="text" name="search" class="form-control w-75 d-inline" id="search" placeholder="Masukkan keyword">
                                      <button type="submit" class="btn btn-success mb-1">Cari</button>
                             </div>
                         </form>
