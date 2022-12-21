@@ -17,7 +17,7 @@ class CreateKonsultasisTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('pesan',1000);
-            $table->string('balasan',1000)->nullable();
+            $table->string('balasan',1000)->default('Tunggu balasan ....');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
             ->references('id')

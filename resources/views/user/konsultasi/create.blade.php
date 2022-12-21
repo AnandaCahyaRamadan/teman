@@ -1,3 +1,35 @@
+<style>
+    .chat-header{
+        background:  rgba(220, 53, 69, 1);
+    }
+    
+    .user-detail h6{
+        display: inline-block;
+    }
+    .options i{
+        color: #a1a1a1;
+        font-size: 19px;
+        cursor: pointer;
+    }
+    .chat-content, .chat-content .sender, .user-detail h6{
+        font-size: 14px;
+    }
+    .chat-content dl{
+        height: 260px;
+        overflow-x: scroll;
+        overflow-x: hidden;
+    }
+    .chat-content dl li{
+        list-style: none;
+      
+    }
+    .chat-content .msg-box{
+        background: #e1e1e1;
+    }
+    .chat-content .time{
+        font-size: 10px;
+    }
+    </style>
 @extends('layouts.main')
 @section('careusel')
      <div class="container-fluid bg-danger py-5 bg-header">
@@ -18,7 +50,7 @@
   <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row">
-                <div class="col-lg-7">
+                <div class="col-md-6">
                     <div class="section-title position-relative pb-3 mb-5">
                         <h1 class="mb-0">Membutuhkan Masukan Berwirausaha, Tanyakan Sekarang Juga</h1>
                     </div> <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.6s">
@@ -31,15 +63,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5 mb-5">
-                      @if (session()->has('success_message'))
-                      <div class="alert alert-success alert-dismissible fade show" role="alert">
-                      {{ session('success_message') }}
-                      <button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close" onclick="this.parentElement.style.display='none';"></button>
-                      </div>
-                      @endif
-                    <div class="bg-danger rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
-                           <form action="/konsultasi/store" method="post">
+                <div class="col-md-6">
+                    <form action="/konsultasi/store" method="post">
                           @csrf
                           <div class="form-group mt-3" hidden>
                             <select class="form-control" id="position-option" name="user_id">
@@ -48,28 +73,56 @@
                                 @endforeach
                             </select>
                           </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <textarea class="form-control bg-light border-0" rows="3" placeholder="Message" name="pesan" id="pesan" required></textarea>
-                                </div>
-                                <div class="col-12 mt-3">
-                                    <button class="btn btn-dark w-100 py-3" type="submit">Kirim Pertanyaan</button>
+                          <div class="container">
+                            <div class="pt-3">
+                                <div class="m-0 chat-main">
+                                    <div class="row">
+                                        <div class="col-md-12 chat-header rounded-top p-2">
+                                            <div class="row">
+                                                <div class="col-md-7 user-detail pt-2 ">
+                                                    <h6 class="h5 fw-bold " style="color:white">Konsultasi</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12  chat-content p-0 bg-white border border-top-0">
+                                            <dl class="pl-3 pr-3 pt-1 mb-1 ">
+                                                @foreach($konsultasi as $key => $konsultasi)
+                                                <li class="p-2 mb-1 rounded">
+                                                    <div class="d-flex flex-row justify-content-end mb-1">
+                                                        <div class="p-3 me-3 border" style="border-radius: 15px; background-color: rgba(57, 192, 237,.2);">
+                                                          <p class="small mb-0">{{ $konsultasi->pesan }}</p>
+                                                        </div>
+                                                        <img src="/img/you.png"
+                                                          alt="avatar 1" style="width: 45px; height: 100%;">
+                                                      </div>
+                                                </li>  
+                                                <li class="p-2 mb-1 rounded">
+                                                    <div class="d-flex flex-row justify-content-start mb-1">
+                                                        <img src="/img/admin.png"
+                                                          alt="avatar 1" style="width: 45px; height: 100%;">
+                                                        <div class="p-3 ms-3" style="border-radius: 15px; background-color: rgba(225, 235, 239, 0.2);">
+                                                          <p class="small mb-0">{{ $konsultasi->balasan }}</p>
+                                                        </div>
+                                                      </div>
+                                                </li>  
+                                                @endforeach                                               
+                                            </dl> 
+                                            <div class="p-2">
+                                                <div class="row">
+                                                    <div>
+                                                        <textarea type="text" class="form-control" placeholder="message ..." name="pesan"></textarea>
+                                                        <button class="btn btn-danger mt-2" type="submit">Kirim</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                          </div>
+                          
                         </form>
                     </div>
-                </div>
-                <div style="text-align: justify text-dark"> 
-                    <h5 class="mt-5 fw-bold">Balasan</h5>
-                    @foreach($konsultasi as $key => $konsultasi)
-                        <p class="mt-3"><b>Pertanyaan</b> : {{$konsultasi->pesan}}</p>
-                        <p><b>Jawaban</b> :  {{$konsultasi->balasan}}</b></p>
-                        <form class='d-inline' action="/konsultasi/hapus/{{ $konsultasi->id}}" method="post">
-                            @csrf
-                            <button onclick="return confirm('Are you sure?')" class="btn btn-danger animated slideInLeft">Hapus</button>
-                            </form>
-                        <hr>
-                    @endforeach
                 </div>
             </div>
         </div>
