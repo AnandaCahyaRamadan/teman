@@ -35,7 +35,7 @@
                       <div class="link-animated d-flex flex-column justify-content-start">
                           <a class="text-light mb-2" href="/dashboard"><i class="bi bi-arrow-right text-danger me-2"></i>Dashboard</a>
                           <a class="text-light mb-2" href="/pendaftaran"><i class="bi bi-arrow-right text-danger me-2"></i>Pendaftaran</a>
-                          <a class="text-light mb-2" href="/pusatbantuan/create"><i class="bi bi-arrow-right text-danger me-2"></i>Pusat Bantuan</a>
+                          <a class="text-light mb-2" href="/logbook"><i class="bi bi-arrow-right text-danger me-2"></i>Logbook</a>
                       </div>
                   </div>
                   <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
@@ -45,7 +45,7 @@
                       <div class="link-animated d-flex flex-column justify-content-start">
                           <a class="text-light mb-2" href="/dashboard"><i class="bi bi-arrow-right text-danger me-2"></i>Dashboard</a>
                           <a class="text-light mb-2" href="/pendaftaran"><i class="bi bi-arrow-right text-danger me-2"></i>Pendaftaran</a>
-                          <a class="text-light mb-2" href="/pusatbantuan/create"><i class="bi bi-arrow-right text-danger me-2"></i>Pusat Bantuan</a>
+                          <a class="text-light mb-2" href="/logbook"><i class="bi bi-arrow-right text-danger me-2"></i>Logbook</a>
                       </div>
                   </div>
               </div>
@@ -58,7 +58,7 @@
       <div class="row justify-content-end">
           <div class="col-lg-8 col-md-6">
               <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-                  <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">Teman Semarang</a>
+                  <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">Teman Kota Semarang</a>
                   
                   {{-- <!-- /*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/
                   --}}

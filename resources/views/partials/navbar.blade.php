@@ -1,6 +1,6 @@
   <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
     <a class="navbar-brand p-0">
-        <h1 class="m-0 h3"><span><img src="/img/disnaker.png" alt="" width="11%"></span> Teman Kota Semarang</h1>
+        <h1 class="m-0 h3"><span><img src="/img/disnaker.png" alt="" width="11%"></span> TEMAN </h2>
     </a>
     <button class="navbar-toggler m-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="fa fa-bars"></span>
@@ -10,11 +10,13 @@
           @if (Route::has('login'))
           @auth
             <a href="/dashboard" class="nav-item nav-link {{ Request::is('dashboard') ? 'active' : '' }}">Dashboard</a>
+            <a href="/logbook" class="nav-item nav-link {{ Request::is('logbook') ? 'active' : '' }}">Logbook</a>
             <a href="/pendaftaran" class="nav-item nav-link {{ Request::is('pendaftaran*') ? 'active' : '' }}">Pendaftaran</a>
             <a href="/konsultasi" class="nav-item nav-link {{ Request::is('konsultasi*') ? 'active' : '' }}">Konsultasi</a>
+            <a href="/klinikwirausaha" class="nav-item nav-link {{ Request::is('klinikwirausaha*') ? 'active' : '' }}">Klinik Wirausaha</a>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                 Welcome, {{ auth()->user()->name }}
+                 {{ auth()->user()->name }}
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li> 

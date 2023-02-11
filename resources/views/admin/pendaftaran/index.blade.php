@@ -1,32 +1,19 @@
 @extends('admin.layouts.main')
-@if (Session::has('error_message'))
-<div class="pt-2">
-    <div class="alert alert-danger alert-dismissible">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <span>{{ Session::get('error_message') }}</span>
-    </div>
-    </div>
-@endif
-@if (Session::has('success_message'))
-<div class="pt-2">
-    <div class="alert alert-success alert-dismissible">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <span>{{ Session::get('success_message') }}</span>
-    </div>
-    </div>
-@endif
-
 @section('container')
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-body">
-
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Pendaftaran</h1>
+  </div>
+  @if (session()->has('success_message'))
+  <div class="alert alert-success" role="alert">
+  {{ session('success_message') }}
+  </div>
+  @endif
+    <div class="table-responsive">
                     <!-- Start kode untuk form pencarian -->
                         <form class="form" method="get" action="{{ route('pendaftaran/search') }}">
                             <div class="form-group w-100 mb-3">
                                 <label for="search" class="d-block mr-2 mb-1">Cari</label>
-                                    <input type="text" name="search" class="form-control w-75 d-inline" id="search" placeholder="Masukkan keyword">
+                                    <input type="text" name="search" class="form-control w-75 d-inline" id="search" placeholder="Masukkan telepon ">
                                      <button type="submit" class="btn btn-success mb-1">Cari</button>
                             </div>
                         </form>
@@ -39,8 +26,8 @@
                     <a href="{{route('pendaftaran.create')}}" class="btn btn-success mb-2">
                         Tambah
                     </a>
-                    <table class="table table-hover table-bordered table-stripped" id="example2">
-                        <thead>
+                    <table class="table">
+                        <thead class="table-light">
                         <tr>
                             <th>No.</th>
                             <th>File</th>
@@ -56,20 +43,19 @@
                             <tr>
                                 <td>{{$key+1}}</td>
                                 <td>
-                                    <a href="{{ asset('storage/' . $pendaftaran->file )}}" class="btn btn-success" type="submit">Download</a>
+                                    <a href="{{ asset('storage/' . $pendaftaran->file )}}" class="badge bg-success" type="submit"><i class='bx bxs-download'></i></a>
                                 </td>
                                 <td>{{$pendaftaran->telepon}}</td>
                                 <td>{{$pendaftaran->users->name}}</td>
                                 <td>{{$pendaftaran->status}}</td>
                                 <td>{{$pendaftaran->penjadwalan}}</td>
                                 <td>
-                                    <a href="{{route('pendaftaran.edit', $pendaftaran)}}" class="btn btn-success btn-xs">
-                                        Edit
+                                    <a href="{{route('pendaftaran.edit', $pendaftaran)}}" class="badge bg-warning"><i class='bx bxs-edit'></i>
                                     </a>
                                     <form class='d-inline' action="{{route('pendaftaran.destroy', $pendaftaran)}}" method="post">
                                     @method('delete')
                                     @csrf
-                                    <button onclick="return confirm('Are you sure?')" class="btn btn-danger btn-xs">Delete</button>
+                                    <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')"><i class='bx bx-x-circle'></i></button>
                                     </form>
                                 </td>
                             </tr>

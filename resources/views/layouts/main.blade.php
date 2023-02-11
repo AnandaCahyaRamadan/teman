@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Teman Semarang</title>
+    <title>Teman Kota Semarang</title>
     <link href="img/disnaker.png" rel="icon">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Tenaga Kerja Mandiri" name="Tenaga Kerja Mandiri">

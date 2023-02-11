@@ -23,10 +23,10 @@
                 <div class="card-body">
 
                     <!-- Start kode untuk form pencarian -->
-                        <form class="form" method="get" action="{{ route('user/search') }}">
+                        <form class="form" method="get" action="{{ route('logbook/search') }}">
                             <div class="form-group w-100 mb-3">
-                                <label for="search" class="d-block mr-2 mb-1">Cari Akun</label>
-                                    <input type="text" name="search" class="form-control w-75 d-inline" id="search" placeholder="Masukkan nama pengguna">
+                                <label for="search" class="d-block mr-2 mb-1">Cari</label>
+                                    <input type="text" name="search" class="form-control w-75 d-inline" id="search" placeholder="Masukkan tanggal">
                                      <button type="submit" class="btn btn-success mb-1">Cari</button>
                             </div>
                         </form>
@@ -36,31 +36,32 @@
                         <p>{{ $message }}</p>
                      </div>
                     @endif
-                    <a href="{{route('users.create')}}" class="btn btn-success mb-2">
+                    <a href="{{route('logbook.create')}}" class="btn btn-success mb-2">
                         Tambah
                     </a>
                     <table class="table table-hover table-bordered table-stripped" id="example2">
                         <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th>Role</th>
+                            <th>username</th>
+                            <th>tanggal</th>
+                            <th>laporan harian</th>
                             <th>Opsi</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($users as $key => $user)
+                        @foreach($logbook as $key => $lb)
                             <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$user->name}}</td>
-                                <td>{{$user->email}}</td>
-                                <td>{{$user->is_admin}}</td>
+                                <td>{{$lb->users->name}}</td>
+                                <td>{{$lb->tanggal}}</td>
+                                <td>{{$lb->laporan_harian}}</td>
+                                
                                 <td>
-                                    <a href="{{route('users.edit', $user)}}" class="btn btn-success btn-xs">
+                                    <a href="{{route('logbook.edit', $lb)}}" class="btn btn-success btn-xs">
                                         Edit
                                     </a>
-                                    <form class='d-inline' action="{{route('users.destroy', $user)}}" method="post">
+                                    <form class='d-inline' action="{{route('logbook.destroy', $lb)}}" method="post">
                                     @method('delete')
                                     @csrf
                                     <button onclick="return confirm('Are you sure?')" class="btn btn-danger btn-xs">Delete</button>
@@ -72,10 +73,10 @@
                         </tbody>
                     </table>
                     <div class=mt-2>
-                        Current Page : {{ $users->currentPage() }} <br>
-                        Jumlah Data : {{ $users->total() }} <br>
-                        Data perhalaman : {{ $users->perPage() }} <br>
-                        {{ $users->links() }}
+                        Current Page : {{ $logbook->currentPage() }} <br>
+                        Jumlah Data : {{ $logbook->total() }} <br>
+                        Data perhalaman : {{ $logbook->perPage() }} <br>
+                        {{ $logbook->links() }}
                     </div>
                 </div>
             </div>

@@ -1,14 +1,17 @@
 <?php
 
-use App\Http\Controllers\AdminDashboardController;
-use App\Http\Controllers\KonsultasiController;
-use App\Http\Controllers\PendaftaranController;
-use App\Http\Controllers\UserAdminController;
-use App\Http\Controllers\UserKonsultasiController;
-use App\Http\Controllers\UserPendaftaranController;
 use App\Models\Pendaftaran;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LogbookController;
+use App\Http\Controllers\UserAdminController;
+use App\Http\Controllers\KonsultasiController;
+use App\Http\Controllers\PendaftaranController;
+use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserKonsultasiController;
+use App\Http\Controllers\UserLogbookController;
+use App\Http\Controllers\UserPendaftaranController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,3 +60,14 @@ route::post('pendaftaran/store', [UserPendaftaranController::class, 'store'])->m
 Route::resource('admin/pendaftaran', PendaftaranController::class)
 ->middleware('auth','verified');
 Route::get('pendaftaran/search', [App\Http\Controllers\PendaftaranController::class, 'search'])->name('pendaftaran/search')->middleware('verified');
+
+route::post('logbook/store', [UserLogbookController::class, 'store'])->middleware('verified');
+route::get('logbook', [\App\Http\Controllers\UserLogbookController::class, 'create'])->middleware('verified');
+
+Route::resource('admin/logbook', LogbookController::class)
+->middleware('auth','verified');
+Route::get('logbook/search', [App\Http\Controllers\LogbookController::class, 'search'])->name('logbook/search')->middleware('verified');
+
+Route::get('posts/search', [App\Http\Controllers\PostController::class, 'search'])->name('posts/search')->middleware('verified');
+route::get('/admin/posts/checkSlug', [PostController::class,'checkSlug'])->middleware('auth');
+route::resource('/admin/posts',PostController::class)->middleware('auth','verified');

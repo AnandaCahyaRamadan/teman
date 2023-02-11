@@ -16,12 +16,6 @@
         <div class="spinner"></div>
     </div>
     <!-- Spinner End -->
-@if (session()->has('success_message'))
-<div class="alert alert-success alert-dismissible fade show me-5 ms-5" role="alert">
-{{ session('success_message') }}
-<button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close" onclick="this.parentElement.style.display='none'; " ></button>
-</div>
-@endif
 <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
     <h5 class="fw-bold text-danger text-uppercase">Pendaftaran</h5>
     <h1 class="mb-0">Daftarkan Timmu Sekarang Juga</h1>
