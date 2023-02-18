@@ -13,9 +13,9 @@
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h1 class="display-1 text-white mb-md-4 animated zoomIn">Tenaga Kerja Mandiri Kota Semarang</h1>
-                            <h5 class="text-white text-uppercase mb-5 animated slideInDown">Dengan Website Teman Semarang, Pendaftaran Pembekalan Wirausaha Menjadi Lebih Mudah</h5>
+                            <h5 class="text-white text-uppercase mb-5 animated slideInDown">Dengan Website Teman, Pembekalan Wirausaha Menjadi Lebih Mudah</h5>
                             <a href="/pendaftaran" class="btn btn-danger py-md-3 px-md-5 me-3 animated slideInLeft">Pendaftaran</a>
-                            <a href="/konsultasi" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Klinik Wirausaha</a>
+                            <a href="/klinikwirausaha/posts" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Klinik Wirausaha</a>
                          </div>
                     </div>
                 </div>
@@ -24,9 +24,9 @@
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h1 class="display-1 text-white mb-md-4 animated zoomIn">Tenaga Kerja Mandiri Kota Semarang</h1>
-                            <h5 class="text-white text-uppercase mb-5 animated slideInDown">Dengan Website Teman Semarang, Pendaftaran Pembekalan Wirausaha Menjadi Lebih Mudah</h5>
+                            <h5 class="text-white text-uppercase mb-5 animated slideInDown">Dengan Website Teman, Pembekalan Wirausaha Menjadi Lebih Mudah</h5>
                             <a href="/pendaftaran" class="btn btn-danger py-md-3 px-md-5 me-3 animated slideInLeft">Pendaftaran</a>
-                            <a href="/konsultasi" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Klinik Wirausaha</a>
+                            <a href="/klinikwirausaha/posts" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Klinik Wirausaha</a>
                         </div>
                     </div>
                 </div>

@@ -8,10 +8,12 @@ use App\Http\Controllers\UserAdminController;
 use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserKonsultasiController;
 use App\Http\Controllers\UserLogbookController;
 use App\Http\Controllers\UserPendaftaranController;
+use App\Http\Controllers\UserPostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,13 +47,9 @@ Route::resource('admin/users', UserAdminController::class)
     ->middleware('auth');
 Route::get('user/search', [App\Http\Controllers\UserAdminController::class, 'search'])->name('user/search')->middleware('verified');
 
-route::post('konsultasi/store', [UserKonsultasiController::class, 'store'])->middleware('verified');
-route::post('/konsultasi/hapus/{konsultasi}', [UserKonsultasiController::class, 'destroy'])->middleware('verified');
-route::get('konsultasi', [\App\Http\Controllers\UserKonsultasiController::class, 'create'])->middleware('verified');
-
-Route::resource('/admin/konsultasi', KonsultasiController::class)
-    ->middleware('auth', 'verified');
-Route::get('konsultasi/search', [App\Http\Controllers\konsultasiController::class, 'search'])->name('konsultasi/search')->middleware('verified');
+//comment 
+Route::resource('/admin/comment', CommentController::class)->middleware('auth','verified');
+Route::get('comment/search', [App\Http\Controllers\CommentController::class, 'search'])->name('comment/search')->middleware('verified');
 
 route::get('pendaftaran', [UserPendaftaranController::class, 'index'])->middleware('verified');
 route::get('pendaftaran/create', [UserPendaftaranController::class, 'create'])->middleware('verified');
@@ -68,6 +66,13 @@ Route::resource('admin/logbook', LogbookController::class)
 ->middleware('auth','verified');
 Route::get('logbook/search', [App\Http\Controllers\LogbookController::class, 'search'])->name('logbook/search')->middleware('verified');
 
-Route::get('posts/search', [App\Http\Controllers\PostController::class, 'search'])->name('posts/search')->middleware('verified');
+Route::get('/klinikwirausaha/posts',[UserPostController::class, 'index'] );
+
+//single post
+Route::get ('/klinikwirausaha/posts/{post:slug}', [UserPostController::class, 'show']);
+Route::post ('/klinikwirausaha/posts/{post:slug}', [UserPostController::class, 'postkomentar']);
+
+Route::get('/posts/search', [App\Http\Controllers\PostController::class, 'search'])->name('posts/search')->middleware('verified');
 route::get('/admin/posts/checkSlug', [PostController::class,'checkSlug'])->middleware('auth');
 route::resource('/admin/posts',PostController::class)->middleware('auth','verified');
+

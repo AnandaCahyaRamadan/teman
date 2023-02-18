@@ -12,8 +12,7 @@
             <a href="/dashboard" class="nav-item nav-link {{ Request::is('dashboard') ? 'active' : '' }}">Dashboard</a>
             <a href="/logbook" class="nav-item nav-link {{ Request::is('logbook') ? 'active' : '' }}">Logbook</a>
             <a href="/pendaftaran" class="nav-item nav-link {{ Request::is('pendaftaran*') ? 'active' : '' }}">Pendaftaran</a>
-            <a href="/konsultasi" class="nav-item nav-link {{ Request::is('konsultasi*') ? 'active' : '' }}">Konsultasi</a>
-            <a href="/klinikwirausaha" class="nav-item nav-link {{ Request::is('klinikwirausaha*') ? 'active' : '' }}">Klinik Wirausaha</a>
+                  <a href="/klinikwirausaha/posts" class="nav-item nav-link {{ Request::is('klinikwirausaha*') ? 'active' : '' }}">Klinik Wirausaha</a>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                  {{ auth()->user()->name }}

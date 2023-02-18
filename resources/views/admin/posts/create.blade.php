@@ -39,7 +39,7 @@
                 @enderror
               </div>
 
-              <div class="mb-3">
+            <div class="mb-3">
                 <label for="body" class="form-label">Body</label>
                 @error('body')
                 <div class="invalid-feeback">

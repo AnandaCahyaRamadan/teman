@@ -27,6 +27,10 @@
                           <i class="bi bi-envelope-open text-danger me-2"></i>
                           <p class="mb-0">temansemarang@gmail.com</p>
                       </div>
+                      <div class="d-flex mb-2">
+                        <i class="bi bi-whatsapp text-danger me-2"></i>
+                        <p class="mb-0">082248440335</p>
+                    </div>
                   </div>
                   <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
                       <div class="section-title section-title-sm position-relative pb-3 mb-4">
@@ -36,6 +40,7 @@
                           <a class="text-light mb-2" href="/dashboard"><i class="bi bi-arrow-right text-danger me-2"></i>Dashboard</a>
                           <a class="text-light mb-2" href="/pendaftaran"><i class="bi bi-arrow-right text-danger me-2"></i>Pendaftaran</a>
                           <a class="text-light mb-2" href="/logbook"><i class="bi bi-arrow-right text-danger me-2"></i>Logbook</a>
+                          <a class="text-light mb-2" href="/klinikwirausaha/posts"><i class="bi bi-arrow-right text-danger me-2"></i>Klinik Wirausaha</a>
                       </div>
                   </div>
                   <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
@@ -46,6 +51,7 @@
                           <a class="text-light mb-2" href="/dashboard"><i class="bi bi-arrow-right text-danger me-2"></i>Dashboard</a>
                           <a class="text-light mb-2" href="/pendaftaran"><i class="bi bi-arrow-right text-danger me-2"></i>Pendaftaran</a>
                           <a class="text-light mb-2" href="/logbook"><i class="bi bi-arrow-right text-danger me-2"></i>Logbook</a>
+                          <a class="text-light mb-2" href="/klinikwirausaha/posts"><i class="bi bi-arrow-right text-danger me-2"></i>Klinik Wirausaha</a>
                       </div>
                   </div>
               </div>

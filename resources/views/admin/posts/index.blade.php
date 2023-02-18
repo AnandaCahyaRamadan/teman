@@ -24,9 +24,9 @@
     <table class="table">
       <thead class="thead-dark">
         <tr class="table-light">
-          <th scope="col">No</th>
+          <th scope="col">No.</th>
           <th scope="col">Title</th>
-          <th scope="col">Action</th>
+          <th scope="col">Opsi</th>
         </tr>
       </thead>
       <tbody>

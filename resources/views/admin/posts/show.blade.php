@@ -22,7 +22,7 @@
             <img src="https://source.unsplash.com/1200x400?" class="img-fluid mt-3">
             @endif
             <article>
-            <p>{!!$post->body!!}</p>
+            <p style="text-align: justify">{!!$post->body!!}</p>
             </article>
         </div>
     </div>

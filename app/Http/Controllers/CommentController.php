@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
-use App\Http\Requests\StoreCommentRequest;
-use App\Http\Requests\UpdateCommentRequest;
+use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
@@ -15,7 +14,10 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        $comments = Comment::paginate(5);
+        return view('admin.comment.index', [
+            'comments' => $comments
+        ]);
     }
 
     /**
@@ -31,10 +33,10 @@ class CommentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreCommentRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCommentRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -42,10 +44,10 @@ class CommentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Comment  $comment
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Comment $comment)
+    public function show($id)
     {
         //
     }
@@ -53,10 +55,10 @@ class CommentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Comment  $comment
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comment $comment)
+    public function edit($id)
     {
         //
     }
@@ -64,11 +66,11 @@ class CommentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateCommentRequest  $request
-     * @param  \App\Models\Comment  $comment
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCommentRequest $request, Comment $comment)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -76,11 +78,23 @@ class CommentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Comment  $comment
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comment $comment)
+    public function destroy(Request $request, $id)
     {
-        //
+        $comment = Comment::find($id);
+        if ($comment) $comment->delete();
+    
+        return redirect()->route('comment.index')
+            ->with('success_message', 'Berhasil menghapus comment');
+    
+    }
+    public function search(Request $request)
+    {
+        $keyword = $request->search;
+        
+        $comments = Comment::where('deskripsi', 'like', "%" . $keyword . "%")->paginate(5);
+        return view('admin.comment.index', compact('comments'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 }

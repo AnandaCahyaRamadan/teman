@@ -1,3 +1,51 @@
+<style>
+    .card {
+  --border-radius: 0.75rem;
+  --primary-color: #7257fa;
+  --secondary-color: #3c3852;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background: #f1f1f3;
+  box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 3%);
+  position: relative;
+}
+
+.card > * + * {
+  margin-top: 1.1em;
+}
+
+.card .card__content {
+  color: var(--secondary-color);
+  font-size: 0.86rem;
+}
+
+.card .card__title {
+  padding: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.card .card__date {
+  color: #6e6b80;
+}
+
+.card .card__arrow {
+  position: absolute;
+  background: var(--primary-color);
+  padding: 0.4rem;
+  border-top-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  bottom: 0;
+  right: 0;
+  transition: 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+</style>
+
 @extends('layouts.main')
 @section('careusel')
      <div class="container-fluid bg-danger py-5 bg-header" style="margin-bottom: 90px;">
@@ -56,25 +104,19 @@
                                                 </div>
                                                 <button class="btn btn-danger mt-2" type="submit">Kirim</button>
                                             </div>
+                                            
                                             <div class="container mt-5">
-                                                <table class="table table-hover table-bordered table-stripped " id="example2">
-                                                    <thead>
-                                                    <tr>
-                                                        <th>No.</th>
-                                                        <th>Tanggal</th>
-                                                        <th>Laporan Harian</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    @foreach($logbook as $key => $lb)
-                                                        <tr>
-                                                            <td>{{$key+1}}</td>
-                                                            <td>{{$lb->tanggal}}</td>
-                                                            <td>{{$lb->laporan_harian}}</td>
-                                                        </tr>
-                                                    @endforeach
-                                                    </tbody>
-                                                </table>
+                                                @foreach($logbook as $key => $lb)
+                                                <div class="card mb-4">
+                                                    <h3 class="card__title">Logbook hari ke - {{ $key+1 }}
+                                                    </h3>
+                                                    <p class="card__content">{{$lb->laporan_harian}}</p>
+                                                    <div class="card__date">
+                                                        {{ $lb->tanggal }}
+                                                    </div>
+                                                </div>
+                                                @endforeach
+
                                             </div>
                                         </div>                                           
                                     </div>

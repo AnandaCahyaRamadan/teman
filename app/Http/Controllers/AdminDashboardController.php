@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
+use App\Models\Logbook;
 use App\Models\Konsultasi;
 use App\Models\Pendaftaran;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class AdminDashboardController extends Controller
@@ -15,11 +18,17 @@ class AdminDashboardController extends Controller
      */
     public function index()
     {
-        $konsultasi_count = Konsultasi::count();
         $pendaftaran_count = Pendaftaran::count();
+        $logbook_count = Logbook::count();
+        $comment_count = Comment::count();
+        $post_count = Post::count();
         return view('admin.index', [
-            'konsultasicount' =>  $konsultasi_count,
             'pendaftarancount' =>  $pendaftaran_count,
+            'logbookcount' =>  $logbook_count,
+            'commentcount' =>  $comment_count,
+            'postcount' =>  $post_count,
+
+
         ]);
     }
 
