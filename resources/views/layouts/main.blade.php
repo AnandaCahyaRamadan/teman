@@ -8,6 +8,15 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Tenaga Kerja Mandiri" name="Tenaga Kerja Mandiri">
     <meta content="Tenaga Kerja Mandiri" name="Tenaga Kerja Mandiri">
+  
+          {{-- trix --}}
+          <link rel="stylesheet" type="text/css" href="/css/trix.css">
+          <script type="text/javascript" src="/js/trix.js"></script>
+          <style>
+            trix-toolbar [data-trix-button-group="file-tools"]{
+              display: none
+            }
+          </style>
 
     <!-- Favicon -->
 
@@ -29,6 +38,14 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset ('css/style.css') }}" rel="stylesheet">
+
+  <style>
+  .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+  </style>
 </head>
 
 <body>
@@ -46,6 +63,7 @@
 
 
 <!-- Back to Top -->
+
 <a href="#" class="btn btn-lg btn-danger btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
