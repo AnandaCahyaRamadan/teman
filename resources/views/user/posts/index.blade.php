@@ -69,6 +69,7 @@
                     <small class="text-muted">
                     By. {{ $post->users->name }} - {{ $post->created_at->diffForHumans() }}
                     </small>
+                    
                   </p>
                   <p class="card-text">{!!$post->excerpt !!}</p>
                   <a href="/klinikwirausaha/posts/{{ $post->slug }}" class="text-decoration-none btn btn-danger">Read More</a>
