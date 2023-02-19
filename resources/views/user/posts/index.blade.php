@@ -63,7 +63,6 @@
                 @else
                 <img src="https://source.unsplash.com/1200x400?"  class="img-fluid">
                 @endif
-
                 <div class="card-body">
                   <h5 class="card-title">{{ $post->title }}</h5>
                   <p>
