@@ -49,7 +49,7 @@
         By. {{ $posts[0]->users->name }} - {{ $posts[0]->created_at->diffForHumans() }}
         </small>
       </p>
-      <p class="card-text">{{ $posts[0]->excerpt }}</p>
+      <p class="card-text">{!! $posts[0]->excerpt !!}</p>
     <a href="/klinikwirausaha/posts/{{ $posts[0]->slug }}" class="text-decoration-none btn btn-danger">Read More</a>
     </div>
   </div>
@@ -71,7 +71,7 @@
                     By. {{ $post->users->name }} - {{ $post->created_at->diffForHumans() }}
                     </small>
                   </p>
-                  <p class="card-text">{{ $post->excerpt }}</p>
+                  <p class="card-text">{!!$post->excerpt !!}</p>
                   <a href="/klinikwirausaha/posts/{{ $post->slug }}" class="text-decoration-none btn btn-danger">Read More</a>
                 </div>
               </div>

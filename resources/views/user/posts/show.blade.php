@@ -30,7 +30,7 @@
             <img src="https://source.unsplash.com/1200x400?" class="img-fluid mt-3">
             @endif
            <article>
-            <p style=>{!!$post->body!!}</p>
+            <p>{!!$post->body!!}</p>
             </article>
             <a href="/klinikwirausaha/posts" class="text-decoration-none d-block mt-3 mb-5">Back to Post</a>
         
