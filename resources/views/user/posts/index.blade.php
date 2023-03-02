@@ -1,4 +1,50 @@
+<style>
+  .btn-floating {
+    position: fixed;
+    right: 40px;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    border: 0;
+    z-index: 9999;
+    color: white;
+    transition: .2s;
+}
 
+.btn-floating:hover {
+    width: auto;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.btn-floating span {
+    font-size: 16px;
+    margin-left: 5px;
+    transition: .2s;
+    line-height: 0px;
+    display: none;
+}
+
+.btn-floating:hover span {
+    display: inline-block;
+}
+
+.btn-floating:hover img {
+    margin-bottom: -3px;
+}
+
+.btn-floating.whatsapp {
+    bottom: 25px;
+    background-color: #34af23;
+    border: 2px solid #fff;
+}
+
+.btn-floating.whatsapp:hover {
+    background-color: #1f7a12;
+}
+
+</style>
 
 @extends('layouts.main')
 @section('careusel')
@@ -28,11 +74,16 @@
             <input type="text" class="form-control" placeholder="search" name="search" value="{{ request('search') }}">
             <button class="btn btn-danger" type="submit">Search</button>
           </div>
-          
         </form>
       </div>
     </div>
   </div>
+  <a href="https://wa.me/6289523980186" target="_blank">
+    <button class="btn-floating whatsapp">
+        <img src="/img/wa.png" width="35px">
+        <span>089523980186</span>
+    </button>
+  </a>
   @if ($posts->count())
 <div class="card">
   @if($posts[0]->image)

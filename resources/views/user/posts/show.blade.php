@@ -55,27 +55,34 @@
                     <li>
                         @foreach ($post->comments()->where('parent',0)->orderBy('created_at','desc')->get() as $comment)
                         <div class="mb-3">
-                            <img src="https://source.unsplash.com/50x50?" alt="avatar" class="avatar" style="float:inline-start">
-                            <p class="ms-5" style="padding-left: 10px"><a href=""> {{ $comment->users->name }}</a><br>
-                            {{ $comment->deskripsi}} <br><small class="text-muted" >{{ $comment->created_at->diffForHumans() }}</small>
-                            </p>
-                        </div>
-                        <form action="" method="POST" style="padding-left: 3.5em">
-                            @csrf
-                            <div>
-                                <div>
-                                    <input type="hidden" name="post_id" value="{{ $post->id }}">
-                                    <input type="hidden" name="parent" value="{{ $comment->id }}">
-                                    <input class="form-control" placeholder="Balas" name="deskripsi" id="deskripsi">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <img src="https://source.unsplash.com/50x50?" alt="avatar" class="avatar">
                                 </div>
-                                <button type="submit" class="btn btn-danger mt-3 btn-xs mb-4">Kirim</button>
+                                <div class="col-md-11">                          
+                                    <p><a href=""> {{ $comment->users->name }}</a><br>
+                                    {{ $comment->deskripsi}} <br><small class="text-muted" >{{ $comment->created_at->diffForHumans() }}</small>
+                                    </p>
+                                </div>
                             </div>
-                        </form>
-                        @foreach ($comment->childs as $child)
-                            <p style="padding-left: 3.5em;"><a href="">{{ $child->users->name }}</a>
-                                {{ $child->deskripsi}} <br><small class="text-muted" >{{ $child->created_at->diffForHumans() }}</small>
-                            </p>
-                        @endforeach
+                            <form action="" method="POST" class="ms-3">
+                                @csrf
+                                <div>
+                                    <div>
+                                        <input type="hidden" name="post_id" value="{{ $post->id }}">
+                                        <input type="hidden" name="parent" value="{{ $comment->id }}">
+                                        <input class="form-control" placeholder="Balas" name="deskripsi" id="deskripsi">
+                                    </div>
+                                    <button type="submit" class="btn btn-danger mt-3 btn-xs mb-4">Kirim</button>
+                                </div>
+                            </form>
+                            @foreach ($comment->childs as $child)
+                                <p><a href="" class="ms-3">{{ $child->users->name }}</a>
+                                    {{ $child->deskripsi}} <br><small class="text-muted ms-3" >{{ $child->created_at->diffForHumans() }}</small>
+                                </p>
+                            @endforeach
+                        </div>
+                        
                     </li>
                     <hr>
                 </ul>
