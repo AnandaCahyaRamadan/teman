@@ -67,7 +67,7 @@
 
     <div class="section-title text-center position-relative pb-3 mx-auto" style="max-width: 600px;">
         <h5 class="fw-bold text-danger text-uppercase">Logbook</h5>
-        <h1 class="mb-0">Isi logbook sesuai tanggal kegiatan</h1>
+        <h1 class="mb-0">Isi Logbook Sesuai Tanggal Kegiatan</h1>
     </div>
                 <form action="/logbook/store" method="post">
                         @csrf

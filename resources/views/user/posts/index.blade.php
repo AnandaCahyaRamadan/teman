@@ -94,7 +94,7 @@
   <img src="https://source.unsplash.com/1200x400?" class="img-fluid mt-3">
   @endif
     <div class="card-body text-center">
-      <h5 class="card-title"><a href="/posts/{{ $posts[0]->slug }}" class="text-decoration-none text-dark">{{ $posts[0]->title }} </a></h5>
+      <h5 class="card-title"><a href="/klinikwirausaha/posts/{{ $posts[0]->slug }}" class="text-decoration-none text-dark">{{ $posts[0]->title }} </a></h5>
       <p>
         <small class="text-muted">
         By. {{ $posts[0]->users->name }} - {{ $posts[0]->created_at->diffForHumans() }}
