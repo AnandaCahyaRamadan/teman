@@ -85,52 +85,52 @@
     </button>
   </a>
   @if ($posts->count())
-<div class="card">
-  @if($posts[0]->image)
-  <div class="d-flex justify-content-center">
-      <img src="{{ asset('storage/' . $posts[0]->image )}}" class="img-fluid">
-  </div>
-  @else
-  <img src="https://source.unsplash.com/1200x400?" class="img-fluid mt-3">
-  @endif
-    <div class="card-body text-center">
-      <h5 class="card-title"><a href="/klinikwirausaha/posts/{{ $posts[0]->slug }}" class="text-decoration-none text-dark">{{ $posts[0]->title }} </a></h5>
-      <p>
-        <small class="text-muted">
-        By. {{ $posts[0]->users->name }} - {{ $posts[0]->created_at->diffForHumans() }}
-        </small>
-      </p>
-      <p class="card-text">{!! $posts[0]->excerpt !!}</p>
-    <a href="/klinikwirausaha/posts/{{ $posts[0]->slug }}" class="text-decoration-none btn btn-danger">Read More</a>
+  <div class="card">
+    @if($posts[0]->image)
+    <div class="d-flex justify-content-center">
+        <img src="{{ asset('storage/' . $posts[0]->image )}}" class="img-fluid">
     </div>
-  </div>
+    @else
+    <img src="https://source.unsplash.com/1200x400?" class="img-fluid mt-3">
+    @endif
+      <div class="card-body text-center">
+        <h5 class="card-title"><a href="/klinikwirausaha/posts/{{ $posts[0]->slug }}" class="text-decoration-none text-dark">{{ $posts[0]->title }} </a></h5>
+        <p>
+          <small class="text-muted">
+          By. {{ $posts[0]->users->name }} - {{ $posts[0]->created_at->diffForHumans() }}
+          </small>
+        </p>
+        <p class="card-text">{!! $posts[0]->excerpt !!}</p>
+      <a href="/klinikwirausaha/posts/{{ $posts[0]->slug }}" class="text-decoration-none btn btn-danger">Read More</a>
+      </div>
+    </div>
 
-    <div class="row mt-5 pb-3">
-        @foreach($posts->skip(1) as $post)
-        <div class="col-md-4">
-            <div class="card">
-                @if($post->image)
-                    <img src="{{ asset('storage/' . $post->image )}}"  class="img-fluid ">
-                @else
-                <img src="https://source.unsplash.com/1200x400?"  class="img-fluid">
-                @endif
-                <div class="card-body">
-                  <h5 class="card-title">{{ $post->title }}</h5>
-                  <p>
-                    <small class="text-muted">
-                    By. {{ $post->users->name }} - {{ $post->created_at->diffForHumans() }}
-                    </small>
-                    
-                  </p>
-                  <p class="card-text">{!!$post->excerpt !!}</p>
-                  <a href="/klinikwirausaha/posts/{{ $post->slug }}" class="text-decoration-none btn btn-danger">Read More</a>
+      <div class="row mt-5 pb-3">
+          @foreach($posts->skip(1) as $post)
+          <div class="col-md-4">
+              <div class="card">
+                  @if($post->image)
+                      <img src="{{ asset('storage/' . $post->image )}}"  class="img-fluid ">
+                  @else
+                  <img src="https://source.unsplash.com/1200x400?"  class="img-fluid">
+                  @endif
+                  <div class="card-body">
+                    <h5 class="card-title">{{ $post->title }}</h5>
+                    <p>
+                      <small class="text-muted">
+                      By. {{ $post->users->name }} - {{ $post->created_at->diffForHumans() }}
+                      </small>
+                      
+                    </p>
+                    <p class="card-text">{!!$post->excerpt !!}</p>
+                    <a href="/klinikwirausaha/posts/{{ $post->slug }}" class="text-decoration-none btn btn-danger">Read More</a>
+                  </div>
                 </div>
-              </div>
-        </div>
-        @endforeach
-    </div>
-  @else
-  <p class="text-center fs-4">No post found</p>
+          </div>
+          @endforeach
+      </div>
+    @else
+    <p class="text-center fs-4">No post found</p>
 @endif
 {{ $posts->links() }}
 @endsection
